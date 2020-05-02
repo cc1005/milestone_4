@@ -18,7 +18,7 @@ from django.contrib import admin
 from accounts import urls as urls_accounts
 from products import urls as urls_products
 from cart import urls as urls_cart
-from catalogue import urls as urls_catalogue
+from catalogue.views import total_catalogue
 from search import urls as urls_search
 from checkout import urls as urls_checkout
 from products.views import all_products
@@ -27,8 +27,8 @@ from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include(urls_catalogue)),
-    url(r'^products/', all_products, name='index'),
+    url(r'^$', total_catalogue, name='index'),
+    url(r'^products/', all_products),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^products/', include(urls_products)),
     url(r'^cart/', include(urls_cart)),
