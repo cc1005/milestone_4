@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from products.models import Product
+from catalogue.models import Catalogue
 
 # Create your views here.
 
 def do_search(request):
-    products = Product.objects.filter(name__icontains=request.GET['q'])
-    return render(request, "products.html", {"products":products})
+    catalogue = Catalogue.objects.filter(name__icontains=request.GET['q'])
+    return render(request, "catalogue.html", {"catalogue":catalogue})

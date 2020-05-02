@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block page_heading %}Irish Archive Catalogue{% endblock %}
+
+{% block content %}
+
+{% for record in catalogue %}
+
+<h3>{{ record.name }}</h3>
+<p>{{ record.description }}</p>
+{% if user.is_authenticated %}
+<p>Click here to see full record</p>
+{% else %}
+<p>Click here to subscribe to premium and gain full access to this record</p>
+{% endif %}
+{% endfor %}
+
+{% endblock %}
