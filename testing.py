@@ -1,4 +1,6 @@
 import os
-import env
+from os import path
+if path.exists("env.py"):
+  import env 
 
 print(os.getenv("TESTVAR"))
