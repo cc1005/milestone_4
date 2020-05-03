@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
-from .models import PremiumPlan, Customer
+from .models import Customer
+from catalogue.models import FullDocument
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.conf import settings
@@ -11,6 +12,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
+
 
 @login_required()
 def checkout(request):

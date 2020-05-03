@@ -27,11 +27,8 @@
             <li><a href="{% url 'registration' %}">Register</a></li>
             {% endif %}
             <li>
-                <a href="{% url 'view_cart' %}">
-                    <i class="fa fa-shipping-cart"></i> Cart
-                    {% if product_count > 0 %}
-                    <label class="badge badge-warning">{{ product_count }}</label>
-                    {% endif %}
+                <a href="{% url 'checkout' %}">
+                    <h2>Register for premium access</h2>
                 </a>
             </li>
         </ul>

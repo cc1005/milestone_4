@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import PremiumPlan, Customer
+from .models import Customer
 
-admin.site.register(PremiumPlan)
 admin.site.register(Customer)

@@ -1,11 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-class PremiumPlan(models.Model):
-    title = models.CharField(max_length=255)
-    text = models.TextField()
-    premium = models.BooleanField(default=True)
-
 class Customer(models.Model):
     user = models.OneToOneField(User, related_name='premium_plan_user', on_delete=models.CASCADE)
     stripeid = models.CharField(max_length=255)
