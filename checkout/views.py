@@ -1,13 +1,12 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.contrib.auth.decorators import login_required
-from django.contrib import messages
-from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse_lazy
+from django.views import generic
+from .models import PremiumPlan, Customer
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.conf import settings
-from django.utils import timezone
-from products.models import Product
 import stripe
-
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -16,6 +15,22 @@ stripe.api_key = settings.STRIPE_SECRET
 @login_required()
 def checkout(request):
     if request.method == 'POST':
+        stripe_customer = stripe.Customer.create(email=request.user.email, source=request.POST['stripeToken'])
+        plan = 'plan_HCsVwhn77y0sdm'
+        if request.POST['plan'] == 'yearly':
+            plan = 'plan_HCsWoYCiTPhwd5'
+        else:
+            subscription = stripe.Subscription.create(customer=stripe_customer.id,
+            items=[{'plan':plan}])
+        
+        customer = Customer()
+        customer.user = request.user
+        customer.stripeid = stripe_customer.id
+        customer.membership = True
+        customer.cancel_at_period_end = False
+        customer.stripe_subscription_id = subscription.id
+        customer.save()
+
         return redirect('index')
     else:
         plan = 'monthly'
