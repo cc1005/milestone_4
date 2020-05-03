@@ -7,3 +7,10 @@ class Catalogue(models.Model):
 
     def __str__(self):
         return self.name
+
+class FullDocument(models.Model):
+    catalogue = models.ForeignKey(Catalogue)
+    document_text = models.TextField(default="")
+
+    def __str__(self):
+        return self.catalogue.name

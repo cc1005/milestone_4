@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from os import path
-if path.exists("env.py"):
+if path.exists(".env"):
   import env 
 import dj_database_url
 
@@ -23,13 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('DEFAULTSECRETKEY')
+SECRET_KEY = os.environ.get('DEFAULTSECRETKEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'checkout',
     'catalogue',
     'plans',
+    'map',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +74,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'cart.contexts.cart_contents'
+                'cart.contexts.cart_contents',
+                'map.context_processors.add_variable_to_context',
             ],
         },
     },
@@ -143,5 +144,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE")
-STRIPE_SECRET = os.getenv("STRIPE_SECRET")
+STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE")
+STRIPE_SECRET = os.environ.get("STRIPE_SECRET")
+
+MAPS_API_KEY = os.environ.get("MAPS_API_KEY")
