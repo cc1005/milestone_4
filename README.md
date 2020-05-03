@@ -25,9 +25,11 @@ User stories:
 * **Account creation and login:** This feature allows users to register for an account, login to that account, request new passwords and delete their accounts. An account is required for users to purchase a subscription.
 * **Checkout:** This app allows for users to purchase either a monthly or a yearly subscription to the service. An account is required to access this feature which is processed by stripe.
 * **Search** Users will be able to search the records held by the Archive using key word terms.
-* **
 
 ### Features Left to Implement
+* **Advanced Search** A more detailed and filtered search system would be useful for this project, which would be coupled with a second feature which would be very useful:
+* **Categorisation of resources** A categorisation of resources would greatly assist in their readability for the project and would provide a better landing page for the user. 
+
 
 ## Technologies Used
 

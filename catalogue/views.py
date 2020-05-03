@@ -14,9 +14,10 @@ def access_full_documents(request):
     plan = get_object_or_404(FullDocument)
     if request.user.is_authenticated:
         try:
-            if request.user.customer.membership:
-                return render(request, 'catalogue/fulldocument.html', {'plan':plan})
+            if request.user:
+                customer = Customer.objects.get(user=request.user)
+                return render(request, "fulldocument.html", {'plan':plan, 'customer':customer})
         except Customer.DoesNotExist:
-            return redirect('join')
+            return redirect('registration')
     else:
-        return redirect('join')
+        return redirect('registration')
