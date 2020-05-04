@@ -14,5 +14,4 @@ function initMap() {
         position:{lat:53.345139,lng:-6.264115},
         map:map
     })
-   
 }

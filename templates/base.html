@@ -33,22 +33,24 @@
                     <a class="nav-link" href="{% url 'login' %}">Login <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'registration' %}">Create profile (necessary for premium access) </a>
+                    <a class="nav-link" href="{% url 'registration' %}">Create profile (necessary for premium access)
+                    </a>
                 </li>
                 {% endif %}
             </ul>
         </div>
     </nav>
 
-<h1>This alert needs to be attached to some variety of if statement</h1>
+    <h1>This alert needs to be attached to some variety of if statement</h1>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4"> <a href="{% url 'checkout' %}">Premium membership</a></h1>
-          <p class="lead">Register for premium membership to gain access to the full document of each catalogue holding.</p>
-          <p>Free users can only use the catalogue to browse titles and descriptions</p>
+            <h1 class="display-4"> <a href="{% url 'checkout' %}">Premium membership</a></h1>
+            <p class="lead">Register for premium membership to gain access to the full document of each catalogue
+                holding.</p>
+            <p>Free users can only use the catalogue to browse titles and descriptions</p>
         </div>
-      </div>
- 
+    </div>
+
 
     <hr>
     {% if messages %}
@@ -71,53 +73,13 @@
 
     <h1>Come visit us in person</h1>
 
+
+
+
+    <div class="map">
     <div id="map"></div>
+    </div>
 
-
-<footer class="page-footer font-small blue pt-4">
-
-    <div class="container-fluid text-center text-md-left">
-  
-      <!-- Grid row -->
-      <div class="row">
-  
-        <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
-  
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns to organize your footer content.</p>
-  
-        </div>
-        <!-- Grid column -->
-  
-        <hr class="clearfix w-100 d-md-none pb-3">
-  
-        <!-- Grid column -->
-        <div class="col-md-3 mb-md-0 mb-3">
-  
-          <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
-  
-          <ul class="list-unstyled">
-            <li>
-              <a href="#!">Link 1</a>
-            </li>
-            <li>
-              <a href="#!">Link 2</a>
-            </li>
-            <li>
-              <a href="#!">Link 3</a>
-            </li>
-            <li>
-              <a href="#!">Link 4</a>
-            </li>
-          </ul>
-  
-        </div>
- 
-  </footer>
-  <!-- Footer -->
 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ map_api }}&callback=initMap"></script>
