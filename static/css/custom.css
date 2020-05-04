@@ -1,6 +1,7 @@
 #map{
-    height:400px;
-    width:50%;
+    height:500px;
+    width:30%;
+    position:relative;
 }
 
 #testing{
