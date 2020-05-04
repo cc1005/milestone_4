@@ -1,11 +1,25 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/***
 #map{
     height: 100%
 }
 
-.map{
-    height: 250px;
-    width: 50%;
+***/
+
+.mapclass{
+    height: 100%;
+    width: 100%;
+    background-color: red;
 }
+/***
 
 @media (max-width: 576px) {
     .map{
@@ -14,19 +28,14 @@
     }
 }
 
+*********/
 #testing{
     color: red;
     font-size: 72pt;
 }
 
-.customisedborder{
-    border-style: solid;
-    border-color: red;
-}
-
-#customisedborder{
-    border-style: solid;
-    border-color: red;
+.customfooter{
+    height: 150px;
 }
 
 .background-image-custom{

@@ -1,16 +1,11 @@
 {% extends 'base.html' %}
 
-{% block content %} 
+{% block content %}
 
 {% for record in fulldocument.catalogue.all %}
+  {{ record }} 
+{% endfor %} 
 
-                <h3>{{ record.name }}</h3>
-                <p>{{ record.description }}</p>
-            {% for i in fulldocument %}
-            <p>{{ i.document_text }}</p>
-            {% endfor %}
-
-    {% endfor %}
 
 
 
