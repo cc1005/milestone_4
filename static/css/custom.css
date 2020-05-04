@@ -3,7 +3,15 @@
 }
 
 .map{
-    height: 150px;
+    height: 250px;
+    width: 50%;
+}
+
+@media (max-width: 576px) {
+    .map{
+        height: 250px;
+        width: 100%;
+    }
 }
 
 #testing{

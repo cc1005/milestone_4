@@ -6,12 +6,11 @@ class Catalogue(models.Model):
     description = models.TextField()
     image = models.ImageField(upload_to='images')
 
-
     def __str__(self):
         return self.name
 
 class FullDocument(models.Model):
-    catalogue = models.ForeignKey(Catalogue)
+    catalogue = models.ForeignKey(Catalogue, related_name='catalogue')
     document_text = models.TextField(default="")
     premium = models.BooleanField(default=True)
 
