@@ -20,3 +20,9 @@
     border-style: solid;
     border-color: red;
 }
+
+.background-image-custom{
+    background-size:     cover;                
+    background-repeat:   no-repeat;
+    background-position: center center;  
+}

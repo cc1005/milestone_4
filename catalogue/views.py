@@ -11,12 +11,12 @@ def total_catalogue(request):
     return render(request, "catalogue.html", {"catalogue": catalogue})
 
 def access_full_documents(request):
-    plan = get_object_or_404(FullDocument)
+    fulldocument = get_object_or_404(FullDocument)
     if request.user.is_authenticated:
         try:
             if request.user:
                 customer = Customer.objects.get(user=request.user)
-                return render(request, "fulldocument.html", {'plan':plan, 'customer':customer})
+                return render(request, "fulldocument.html", {'fulldocument':fulldocument, 'customer':customer})
         except Customer.DoesNotExist:
             return redirect('registration')
     else:

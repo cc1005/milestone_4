@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'map.context_processors.add_variable_to_context',
+                'django.template.context_processors.media',
             ],
         },
     },

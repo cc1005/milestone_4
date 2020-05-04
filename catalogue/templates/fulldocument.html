@@ -1,5 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %} 
-<h1>SHOW FULL DOCUMENT HERE</h1>
+
+{% for record in fulldocument %}
+
+<div class="container">
+    <div class="rounded border">
+        <div class="row justify-content-md-center">
+            <div class="col col-s-2" style="background-image: url('{{ MEDIA_URL }}{{ record.image }}'); background-size: contain; background-repeat: no-repeat; background-position: center center">
+
+            </div>
+
+            <div class="col col-lg-8">
+                <h3>{{ record.name }}</h3>
+                <p>{{ record.description }}</p>
+                {% if user.is_authenticated %}
+                <p>Click here to see full record</p>
+                {% else %}
+                <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'registration' %}">Register</a> as a premium
+                    user to gain full access to this record.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
 {% endblock %}
