@@ -48,6 +48,7 @@ Early on in this project I decided to move from Gitpod to using my local machine
 
 ### Acknowledgements
 
+A Linkedin Training course by Nick Walter called "Building a paid membership site with Django" provided the concept and some of the base code for the stripe functionality and use of a subscription service. The tutorials can be found here (https://www.linkedin.com/learning/building-a-paid-membership-site-with-djang) behind a paywall. 
 
 
 

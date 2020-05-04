@@ -23,3 +23,4 @@ def access_full_documents(request):
     else:
         return redirect('registration')
 
+
