@@ -74,19 +74,48 @@
     </div>
     {% block content %} {% endblock %}
 
-    <footer class="footer fixed-bottom">
+    <footer class="footer customfooter">
+        <!--
         <div class="container customfooter">
             <div class="row">
                 <div class="col-md-8 mapclass">
                     <div class="mapclass">
-                        <div id="map"></div>
+                    -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <div id="map"></div>
+                </div>
+                <div class="col-3 text-center addressbackground">
+                    <h3>Come visit us in person at:</h3>
+                    <p>16 Dublin house <br />
+                        Temple Bar <br />
+                        Dublin <br />
+                        Ireland
+                    </p>
+                </div>
+                <div class="col-3 text-center socialmediabackground vertical-center">
+                    <span class="textalignmentsocialmedia">
+                        <h3>Follow us on social media:</h3>
+                        <h6>Twitter</h6>
+                        <h6>Instagram</h6>
+                        <h6>Facebook</h6>
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+        <!--
                     </div>
                 </div>
                 <div class="col-md-4">
                     <h1>Come visit us in person</h1>
                 </div>
             </div>
-        </div>
+        </div> 
+    -->
     </footer>
 
     </script>

@@ -7,19 +7,19 @@ body {
     margin-bottom: 60px;
 }
 
-/***
+
 #map{
     height: 100%
 }
 
-***/
 
+/***
 .mapclass{
     height: 100%;
     width: 100%;
     background-color: red;
 }
-/***
+
 
 @media (max-width: 576px) {
     .map{
@@ -34,12 +34,37 @@ body {
     font-size: 72pt;
 }
 
-.customfooter{
-    height: 150px;
-}
-
 .background-image-custom{
     background-size:     cover;                
     background-repeat:   no-repeat;
     background-position: center center;  
+}
+
+@media (max-width: 576px) {
+    .footer{
+        height: 250px;
+        width: 100%;
+    }
+}
+
+@media (min-width: 577px) {
+    .footer{
+        height: 300px;
+        width: 100%;
+    }
+}
+
+.addressbackground{
+    background-color: #451F55;
+    color: white;
+}
+
+.socialmediabackground{
+    background-color: #724E91;
+    color: white;
+}
+
+.textalignmentsocialmedia{
+    margin-top: auto;
+    margin-bottom: auto;
 }
