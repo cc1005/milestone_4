@@ -49,7 +49,8 @@ Early on in this project I decided to move from Gitpod to using my local machine
 ### Acknowledgements
 
 A Linkedin Training course by Nick Walter called "Building a paid membership site with Django" provided the concept and some of the base code for the stripe functionality and use of a subscription service. The tutorials can be found here (https://www.linkedin.com/learning/building-a-paid-membership-site-with-djang) behind a paywall. 
-
+Icons were provided by https://uxwing.com/, a royalty free icon website which requires no attribution for the icons in its database.
+Historical materials were taken from https://www.oireachtas.ie/en where all records of state debates are published online. 
 
 
 [![Build Status](https://travis-ci.org/cc1005/milestone_4.svg?branch=master)](https://travis-ci.org/cc1005/milestone_4)
