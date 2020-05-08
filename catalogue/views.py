@@ -10,8 +10,8 @@ def total_catalogue(request):
     catalogue = Catalogue.objects.all()
     return render(request, "catalogue.html", {"catalogue": catalogue})
 
-def access_full_documents(request):
-    fulldocument = get_object_or_404(FullDocument)
+def access_full_documents(request, fulldocument_id):
+    fulldocument = get_object_or_404(FullDocument, pk=fulldocument_id)
     catalogue = get_object_or_404(Catalogue)
     if request.user.is_authenticated:
         try:
