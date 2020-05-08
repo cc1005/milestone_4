@@ -18,7 +18,7 @@
                 <h3>{{ record.name }}</h3>
                 <p>{{ record.description }}</p>
                 {% if user.is_authenticated %}
-                <p>Click <a href="{% url 'fulldocument fulldocument.id' %}">here</a> to see full record</p>
+                <p>Click <a href="{% url 'fulldocument' %}">here</a> to see full record</p>
                 {% else %}
                 <p><a href="{% url 'login' %}">Login</a> or <a href="{% url 'registration' %}">Register</a> as a premium
                     user to gain full access to this record.</p>
