@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <html>
 
 <head>
@@ -8,8 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <script src="https://kit.fontawesome.com/1847d3a02b.js" crossorigin="anonymous"></script>
     <script src="{% static 'js/map.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}" type="text/css">
 </head>
 
 <body>
@@ -51,6 +53,8 @@
             </ul>
         </div>
     </nav>
+
+    <p class="textbody">TESTINGTEXT</p>
 
     <div class="container">
         <div class="display">
