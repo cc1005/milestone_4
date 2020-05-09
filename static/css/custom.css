@@ -4,12 +4,19 @@ html {
 }
 
 body {
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 
 #map{
-    height: 100%
+    height: 100%;
+}
+
+.removepadding{
+    padding: 0px;
 }
 
 
@@ -67,4 +74,10 @@ body {
 .textalignmentsocialmedia{
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.customfooter{
+    width:100vw; 
+    left: 0;
+    bottom:0;
 }

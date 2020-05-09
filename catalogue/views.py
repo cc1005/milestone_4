@@ -27,13 +27,13 @@ def access_full_documents(request, catalogue_id):
 """
 
 def access_full_documents(request, catalogue_id):
-    catalogue = get_object_or_404(Catalogue, pk=catalogue_id)
-    fulldocument = get_object_or_404(FullDocument, pk=catalogue_id)
-    title = catalogue.name
-    description = catalogue.description
+    cataloguefulldoc = get_object_or_404(Catalogue, pk=catalogue_id)
+    fulldocument = FullDocument.catalogue
+    title = cataloguefulldoc.name
+    description = cataloguefulldoc.description
     fulltext = fulldocument.document_text
     context = {
-        "catalogue": catalogue,
+        "cataloguefulldoc": cataloguefulldoc,
         "title": title,
         "description": description,
         "fulltext": fulltext,
