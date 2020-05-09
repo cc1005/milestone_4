@@ -19,11 +19,8 @@ def checkout(request):
     if request.method == 'POST':
         stripe_customer = stripe.Customer.create(email=request.user.email, source=request.POST['stripeToken'])
         plan = 'plan_HCsVwhn77y0sdm'
-        if request.POST['plan'] == 'yearly':
-            plan = 'plan_HCsWoYCiTPhwd5'
-        else:
-            subscription = stripe.Subscription.create(customer=stripe_customer.id,
-            items=[{'plan':plan}])
+        subscription = stripe.Subscription.create(customer=stripe_customer.id,
+        items=[{'plan':plan}])
         
         customer = Customer()
         customer.user = request.user

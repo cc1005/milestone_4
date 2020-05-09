@@ -2,8 +2,14 @@
 
 {% block page_title %}{{ user }}'s Profile{% endblock %}
 
-{% block page_heading %}{{ user }}'s Profile{% endblock %}
-
 {% block content %}
-<p>{{ profile.email }}</p>
+
+
+
+<div class="container">
+    <h1>{{ user }}'s profile</h1>
+    <p>First name: {{ profile.first_name }}</p>
+    <p>Last name: {{ profile.last_name }}</p>
+    <p>Email: {{ profile.email }}</p>
+</div>
 {% endblock %}
