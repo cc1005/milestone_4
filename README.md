@@ -54,6 +54,7 @@ Historical materials were taken from a selection of sources to provide variety:
 * https://www.oireachtas.ie/en where all records of state debates are published online,
 * Wikisource https://en.wikisource.org/wiki/Constitution_of_Ireland_%28original_text%29 for the Irish Constitution,
 * Documents on Irish Foreign Policy https://www.difp.ie/docs/1922/Northern-Ireland/278.htm provided some of the letters used in the project.
+* The letter from GBS to the British Times was taken from the website of the Institute for Historical Review http://www.ihr.org/jhr/v08/v08p509_Klett.html 
 
 
 [![Build Status](https://travis-ci.org/cc1005/milestone_4.svg?branch=master)](https://travis-ci.org/cc1005/milestone_4)

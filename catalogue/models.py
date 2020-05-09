@@ -10,7 +10,7 @@ class Catalogue(models.Model):
         return self.name
 
 class FullDocument(models.Model):
-    catalogue = models.ForeignKey(Catalogue, related_name='catalogue')
+    catalogue = models.ForeignKey(Catalogue, related_name='fd')
     document_text = models.TextField(default="")
     premium = models.BooleanField(default=True)
 

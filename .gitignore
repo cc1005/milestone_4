@@ -4,3 +4,4 @@ env.py
 .DS_Store
 *.sqlite3
 .env
+aws_access_keys

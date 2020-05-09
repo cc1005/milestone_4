@@ -20,24 +20,10 @@ def total_catalogue(request):
         return render(request, "cataloguejumbotron.html", {"catalogue": catalogue})
     
 
-"""
-def access_full_documents(request, catalogue_id):
-    fulldocument = get_object_or_404(FullDocument)
-    catalogue = get_object_or_404(Catalogue, )
-    if request.user.is_authenticated:
-        try:
-            if request.user:
-                customer = Customer.objects.get(user=request.user)
-                return render(request, "fulldocument.html", {'fulldocument':fulldocument, 'customer':customer, 'catalogue':catalogue})
-        except Customer.DoesNotExist:
-            return redirect('registration')
-    else:
-        return redirect('registration')
-"""
-
 def access_full_documents(request, catalogue_id):
     cataloguefulldoc = get_object_or_404(Catalogue, pk=catalogue_id)
-    fulldocument = FullDocument.catalogue
+    fulldocumentfd = Catalogue.objects.get(pk=catalogue_id).fd.all()
+    fulldocument = get_object_or_404(fulldocumentfd)
     title = cataloguefulldoc.name
     description = cataloguefulldoc.description
     fulltext = fulldocument.document_text
