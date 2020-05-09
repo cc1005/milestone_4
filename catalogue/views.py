@@ -9,7 +9,16 @@ from checkout.views import checkout
 
 def total_catalogue(request):
     catalogue = Catalogue.objects.all()
-    return render(request, "catalogue.html", {"catalogue": catalogue})
+    if request.user.is_authenticated:
+        try:
+            if request.user:
+                customer = Customer.objects.get(user=request.user)
+                return render(request, "catalogue.html", {"catalogue": catalogue})
+        except Customer.DoesNotExist:
+            return render(request, "cataloguejumbotron.html", {"catalogue": catalogue})
+    else:
+        return render(request, "cataloguejumbotron.html", {"catalogue": catalogue})
+    
 
 """
 def access_full_documents(request, catalogue_id):

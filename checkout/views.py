@@ -38,9 +38,4 @@ def checkout(request):
         plan = 'monthly'
         price = 499
         euro_price = "4.99"
-        if request.method == 'GET' and 'plan' in request.GET:
-            if request.GET['plan'] == 'yearly':
-                plan = 'yearly'
-                price = 4900
-                euro_price = "49.00"
         return render(request, "checkout.html", {'plan':plan,'price':price,'euro_price':euro_price})

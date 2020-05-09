@@ -51,9 +51,9 @@ Early on in this project I decided to move from Gitpod to using my local machine
 A Linkedin Training course by Nick Walter called "Building a paid membership site with Django" provided the concept and some of the base code for the stripe functionality and use of a subscription service. The tutorials can be found here (https://www.linkedin.com/learning/building-a-paid-membership-site-with-djang) behind a paywall. 
 Icons were provided by https://uxwing.com/, a royalty free icon website which requires no attribution for the icons in its database.
 Historical materials were taken from a selection of sources to provide variety:
- https://www.oireachtas.ie/en where all records of state debates are published online,
- Wikisource https://en.wikisource.org/wiki/Constitution_of_Ireland_%28original_text%29 for the Irish Constitution,
- Documents on Irish Foreign Policy https://www.difp.ie/docs/1922/Northern-Ireland/278.htm provided some of the letters used in the project.
+* https://www.oireachtas.ie/en where all records of state debates are published online,
+* Wikisource https://en.wikisource.org/wiki/Constitution_of_Ireland_%28original_text%29 for the Irish Constitution,
+* Documents on Irish Foreign Policy https://www.difp.ie/docs/1922/Northern-Ireland/278.htm provided some of the letters used in the project.
 
 
 [![Build Status](https://travis-ci.org/cc1005/milestone_4.svg?branch=master)](https://travis-ci.org/cc1005/milestone_4)
