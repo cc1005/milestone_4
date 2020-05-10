@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark customnavbar texttitle">
         <a class="navbar-brand" href="{% url 'index' %}">Irish Archive</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,17 +53,9 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search our records</button>
-            </form>
-        </div>
-    </div>
     {% block content %} {% endblock %}
 
-    <footer class="customfooter footer">
+    <footer class="customfooter footer texttitle">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 removepadding">

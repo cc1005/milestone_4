@@ -1,16 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block page_heading %}Irish Archive Catalogue{% endblock %}
+{% block page_title %}Irish Archive Catalogue{% endblock %}
 {% block content %}
 
-{% for record in catalogue %}
 <div class="container">
+    <div class="welcome">  
+        <h1 class="texttitle">Welcome to the Online Irish Archive</h1>
+        <p class="textbody">As a premium mumber, you have access to all of our currently online texts. Feel free to browse the catalogue or search the titles for something more specific</p>    
+    </div>
+
+</div>
+<div class="container">
+    <div class="display searchbar textbody">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q">
+            <button type="submit">Search our records</button>
+        </form>
+    </div>
+    {% for record in catalogue %}
     <div class="rounded border">
         <div class="row justify-content-md-center textbody">
             <div class="col col-sm-2 iconstyling" style="background-image: url('{{ MEDIA_URL }}{{ record.image }}')">
-
             </div>
-
             <div class="col col-lg-8">
                 <h3>{{ record.name }}</h3>
                 <p>{{ record.description }}</p>
@@ -22,9 +33,8 @@
                 {% endif %}
             </div>
         </div>
-    </div> 
-</div>
+    </div>
 {% endfor %}
-
+</div>
 
 {% endblock %}
