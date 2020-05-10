@@ -5,11 +5,13 @@
 {% block page_heading %}User Login{% endblock %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    {{ login_form }}
-    <button type="submit">Login</button>
-</form>
+<div class="container texttitle paddingtop">
+    <form method="POST">
+        {% csrf_token %}
+        {{ login_form.as_p }}
+        <button type="submit" class="texttitle">Login</button>
+    </form>
+    <p class="paddingtop"><a href="{% url 'password_reset' %}">Reset Password</a></p>
+</div>
 
-<p><a href="{% url 'password_reset' %}">Reset Password</a></p>
 {% endblock %}

@@ -6,11 +6,12 @@
 {% block content %}
 
 
-
-<div class="container">
-    <h1>{{ user }}'s profile</h1>
-    <p>First name: {{ profile.first_name }}</p>
-    <p>Last name: {{ profile.last_name }}</p>
-    <p>Email: {{ profile.email }}</p>
+<div class="container texttitle paddingtop">
+    <div class="container">
+        <h1>{{ user }}'s profile</h1>
+        <p>First name: {{ profile.first_name }}</p>
+        <p>Last name: {{ profile.last_name }}</p>
+        <p>Email: {{ profile.email }}</p>
+    </div>
 </div>
 {% endblock %}
