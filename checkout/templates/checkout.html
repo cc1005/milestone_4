@@ -30,52 +30,24 @@
           <strong>€{{ euro_price }}</strong>
         </li>
       </ul>
-      <button class="btn btn-secondary paymentbutton texttitle" id="checkout-button-plan_HCsVwhn77y0sdm" role="link">
-        Checkout
-      </button>
-      <div id="error-message"></div>
     </div>
   </div>
-  
 </div>
 
-
-<!-- Load Stripe.js on your website. -->
-<script src="https://js.stripe.com/v3"></script>
-
-<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<div class="container"></div>
-
-
-<script>
-  (function () {
-    var stripe = Stripe('pk_test_aJVFBgWVpGJ6IhND2czRM1gx00o2zdHZte');
-
-    var checkoutButton = document.getElementById('checkout-button-plan_HCsVwhn77y0sdm');
-    checkoutButton.addEventListener('click', function () {
-      // When the customer clicks on the button, redirect
-      // them to Checkout.
-      stripe.redirectToCheckout({
-        items: [{ plan: 'plan_HCsVwhn77y0sdm', quantity: 1 }],
-
-        // Do not rely on the redirect to the successUrl for fulfilling
-        // purchases, customers may not always reach the success_url after
-        // a successful payment.
-        // Instead use one of the strategies described in
-        // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: 'https://finalmilestoneproject.herokuapp.com/',
-        cancelUrl: 'https://finalmilestoneproject.herokuapp.com/checkout/checkout/',
-      })
-        .then(function (result) {
-          if (result.error) {
-            // If `redirectToCheckout` fails due to a browser or network
-            // error, display the localized error message to your customer.
-            var displayError = document.getElementById('error-message');
-            displayError.textContent = result.error.message;
-          }
-        });
-    });
-  })();
-</script>
+<div class="text-center pt-3">
+  <form action="{% url 'checkout' %}" method="POST">
+      {% csrf_token %}
+      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="pk_test_aJVFBgWVpGJ6IhND2czRM1gx00o2zdHZte" 
+          data-amount="{{ price }}"
+          data-name="Irish Archive membership" 
+          data-description="Premium Membership" 
+          data-email="{{ user.email }}"
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png" 
+          data-locale="auto">
+          </script>
+      <input type="hidden" value="{{ plan }}" name="plan" />
+  </form>
+</div>
 
 {% endblock %}
