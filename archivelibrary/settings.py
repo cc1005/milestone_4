@@ -28,7 +28,9 @@ SECRET_KEY = os.environ.get('DEFAULTSECRETKEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['finalmilestoneproject.herokuapp.com']
+ALLOWED_HOSTS = [
+    'finalmilestoneproject.herokuapp.com',
+    '127.0.0.1']
 
 # Application definition
 
@@ -72,7 +74,6 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'map.context_processors.add_variable_to_context',
-                'django.template.context_processors.media',
             ],
         },
     },
@@ -152,11 +153,13 @@ STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+MEDIA_URL = '/media/'
 
 STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE")
 STRIPE_SECRET = os.environ.get("STRIPE_SECRET")
