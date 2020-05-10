@@ -5,24 +5,35 @@
 {% block content %}
 
 <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4"> <a href="{% url 'checkout' %}">Premium membership</a></h1>
-        <p class="lead">Register for premium membership to gain access to the full document of each catalogue
+    <div class="container text-center">
+        <h1 class="display-4 texttitle"> <a href="{% url 'checkout' %}" class="jumbotrontextcolour">Premium membership</a></h1>
+        <p class="lead texttitle">Register for premium membership to gain access to the full document of each catalogue
             holding.</p>
-        <p>Free users can only use the catalogue to browse titles and descriptions</p>
+        <p class="textbody">Free users can only use the catalogue to browse titles and descriptions</p>
     </div>
 </div>
 
-{% for record in catalogue %}
 <div class="container">
+    <div class="welcome">  
+        <h1 class="texttitle">Welcome to the Online Irish Archive</h1>
+        <p class="textbody">As a free user, you only have access to our catalogue. Please consider subscribing to premium access for full membership.</p>    
+    </div>
+
+</div>
+<div class="container">
+    <div class="display searchbar textbody">
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q">
+            <button type="submit">Search our records</button>
+        </form>
+    </div>
+    {% for record in catalogue %}
     <div class="rounded border">
         <div class="row justify-content-md-center textbody">
-            <div class="col col-s-2" style="background-image: url('{{ MEDIA_URL }}{{ record.image }}'); background-size: contain; background-repeat: no-repeat; background-position: center center">
-
+            <div class="col col-sm-2 iconstyling" style="background-image: url('{{ MEDIA_URL }}{{ record.image }}')">
             </div>
-
             <div class="col col-lg-8">
-                <h3>{{ record.name }}</h3>
+                <p class="cataloguetitle texttitle paddingtop">{{ record.name }}</p>
                 <p>{{ record.description }}</p>
                 {% if user.is_authenticated %}
                 <p>Click <a href="{% url 'fulldocument' record.id %}">here</a> to see full record</p>
@@ -32,9 +43,9 @@
                 {% endif %}
             </div>
         </div>
-    </div> 
-</div>
+    </div>
 {% endfor %}
+</div>
 
 
 {% endblock %}
