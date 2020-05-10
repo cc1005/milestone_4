@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-
-
-<p>{{ title }}</p>
-<p>{{ description }}</p>
-<p>{{ fulltext }}</p>
-
-
+<div class="container">
+    <div class="rounded border margintop">
+        <div class="row textbody">
+            <div class="col">
+                <p class="cataloguetitle texttitle paddingtop paddingleftandright">{{ title }}</p>
+                <p class="paddingleftandright">{{ description }}</p>
+                <p class="paddingleftandright">{{ fulltext }}"</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 {% endblock %}

@@ -5,8 +5,8 @@
 {% block head_js %}
 <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript" src="">
-    //<![CDATA[
-    Stripe.publishableKey = '{{ publishable }}';
+  //<![CDATA[
+  Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
@@ -15,27 +15,28 @@
 {% block content %}
 
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-4 order-md-2 mb-4">
-            <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">1</span>
-            </h4>
-            <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Irish Archive Premium</h6>
-                        <small class="text-muted">{{ plan|title }}</small>
-                    </div>
-                    <span class="text-muted">€{{ euro_price }}</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total (EUR)</span>
-                    <strong>€{{ euro_price }}</strong>
-                </li>
-            </ul>
-        </div>
+  <div class="row justify-content-center paddingtop">
+    <div class="col-md-4 order-md-2 mb-4">
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Irish Archive Premium</h6>
+            <small class="text-muted">{{ plan|title }}</small>
+          </div>
+          <span class="text-muted">€{{ euro_price }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (EUR)</span>
+          <strong>€{{ euro_price }}</strong>
+        </li>
+      </ul>
+      <button class="btn btn-secondary paymentbutton texttitle" id="checkout-button-plan_HCsVwhn77y0sdm" role="link">
+        Checkout
+      </button>
+      <div id="error-message"></div>
     </div>
+  </div>
+  
 </div>
 
 
@@ -43,44 +44,38 @@
 <script src="https://js.stripe.com/v3"></script>
 
 <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
-<button class="paymentbutton"
-  id="checkout-button-plan_HCsVwhn77y0sdm"
-  role="link"
->
-  Checkout
-</button>
+<div class="container"></div>
 
-<div id="error-message"></div>
 
 <script>
-(function() {
-  var stripe = Stripe('pk_test_aJVFBgWVpGJ6IhND2czRM1gx00o2zdHZte');
+  (function () {
+    var stripe = Stripe('pk_test_aJVFBgWVpGJ6IhND2czRM1gx00o2zdHZte');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_HCsVwhn77y0sdm');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{plan: 'plan_HCsVwhn77y0sdm', quantity: 1}],
-      
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: 'https://finalmilestoneproject.herokuapp.com/',
-      cancelUrl: 'https://finalmilestoneproject.herokuapp.com/checkout/checkout/',
-    })
-    .then(function (result) {
-      if (result.error) {
-        // If `redirectToCheckout` fails due to a browser or network
-        // error, display the localized error message to your customer.
-        var displayError = document.getElementById('error-message');
-        displayError.textContent = result.error.message;
-      }
+    var checkoutButton = document.getElementById('checkout-button-plan_HCsVwhn77y0sdm');
+    checkoutButton.addEventListener('click', function () {
+      // When the customer clicks on the button, redirect
+      // them to Checkout.
+      stripe.redirectToCheckout({
+        items: [{ plan: 'plan_HCsVwhn77y0sdm', quantity: 1 }],
+
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: 'https://finalmilestoneproject.herokuapp.com/',
+        cancelUrl: 'https://finalmilestoneproject.herokuapp.com/checkout/checkout/',
+      })
+        .then(function (result) {
+          if (result.error) {
+            // If `redirectToCheckout` fails due to a browser or network
+            // error, display the localized error message to your customer.
+            var displayError = document.getElementById('error-message');
+            displayError.textContent = result.error.message;
+          }
+        });
     });
-  });
-})();
+  })();
 </script>
 
 {% endblock %}

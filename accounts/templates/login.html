@@ -9,9 +9,9 @@
     <form method="POST">
         {% csrf_token %}
         {{ login_form.as_p }}
-        <button type="submit" class="texttitle">Login</button>
+        <button type="submit" class="texttitle btn btn-secondary paymentbutton">Login</button>
     </form>
-    <p class="paddingtop"><a href="{% url 'password_reset' %}">Reset Password</a></p>
+    <button class="btn btn-secondary btntopmargin"><a href="{% url 'password_reset' %}" style="color:white">Reset Password</a></button>
 </div>
 
 {% endblock %}

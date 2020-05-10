@@ -14,7 +14,7 @@
     <div class="display searchbar textbody">
         <form action="{% url 'search' %}" method="get">
             <input type="text" name="q">
-            <button type="submit">Search our records</button>
+            <button type="submit" class="btn btn-secondary paymentbutton texttitle">Search our records</button>
         </form>
     </div>
     {% for record in catalogue %}
