@@ -165,3 +165,9 @@ STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE")
 STRIPE_SECRET = os.environ.get("STRIPE_SECRET")
 
 MAPS_API_KEY = os.environ.get("MAPS_API_KEY")
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
+EMAIL_PORT = 587
