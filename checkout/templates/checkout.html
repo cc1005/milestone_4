@@ -34,6 +34,8 @@
   </div>
 </div>
 
+<!-- The javascript checkout below is heavily influenced by the one used by Nick Walter in his course "Building a paid membership site with Django", of course amended to reflect this site more accurately and suit my purposes. An attempt to move to a stripe-hosted checkout system (held entirely on their website) late in the project proved promising but ultimately presented too many bugs too late in the development process to be maintained for the final build (see commit 468e5bbb591070801b63bfcf68271052009fe1e4, uploaded at approx 22:00gmt on 10 May, for the code for this alternative build.See https://stripe.com/gb/payments/checkout for details of the stripe checkout service. -->
+
 <div class="text-center pt-3">
   <form action="{% url 'checkout' %}" method="POST">
       {% csrf_token %}
