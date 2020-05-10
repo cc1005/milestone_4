@@ -48,6 +48,7 @@ Early on in this project I decided to move from Gitpod to using my local machine
 
 ### Acknowledgements
 
+The Code Institute Django lessons were very important for shaping aspects of this project, especially the accounts app which is heavily based upon the app created in the Code Institute lectures on Django Accounts. 
 A Linkedin Training course by Nick Walter called "Building a paid membership site with Django" provided the concept and some of the base code for the stripe functionality and use of a subscription service. The tutorials can be found here (https://www.linkedin.com/learning/building-a-paid-membership-site-with-djang) behind a paywall. 
 Icons were provided by https://uxwing.com/, a royalty free icon website which requires no attribution for the icons in its database.
 Historical materials were taken from a selection of sources to provide variety:
